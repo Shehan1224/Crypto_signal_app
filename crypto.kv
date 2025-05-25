@@ -1,0 +1,38 @@
+<MainWidget>:
+    orientation: "vertical"
+    padding: 20
+    spacing: 15
+
+    TextInput:
+        id: symbol
+        hint_text: "Enter Symbol (e.g., BTCUSDT)"
+        multiline: False
+        size_hint_y: None
+        height: "40dp"
+        background_color: .1, .1, .1, 1
+        foreground_color: 1, 1, 1, 1
+
+    TextInput:
+        id: interval
+        hint_text: "Enter Interval (e.g., 1h)"
+        multiline: False
+        size_hint_y: None
+        height: "40dp"
+        background_color: .1, .1, .1, 1
+        foreground_color: 1, 1, 1, 1
+
+    Button:
+        text: "Analyze"
+        size_hint_y: None
+        height: "50dp"
+        background_color: 1, 0.8, 0, 1  # Yellow (Binance)
+        color: 0, 0, 0, 1
+        on_press: root.analyze_signal()
+
+    Label:
+        id: output
+        text: ""
+        markup: True
+        halign: "center"
+        valign: "middle"
+        text_size: self.width, self.height
